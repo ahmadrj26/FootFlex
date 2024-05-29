@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+  <style>
+body{
+    font-family: sans-serif;
+}
+.header{
+    background-image: url(abtheader.png);
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="finallogo.png" width="60" height="55" alt="company's-logo">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="" class="cart-icon"><i class="bi bi-cart-check-fill"></i></a>
+                <img src="menubar.png" class="menu-bar" onclick="menutoggle()" alt="menubar">
+            </div>
+        </div>
+    </div>
+<!--Product Cart-->    
+<div class="pcart">
+    <h2 class="pcart-title">Your Cart</h2>
+    <div class="pcart-content"></div>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">£0</div>
+    </div>
+    <button type="button" class="btn-buy">Buy Now</button>
+    <i class="bi bi-x-circle" id="close-pcart"></i>
+</div>
+<!--Payment Options-->
+<div id="payment" class="payment">
+    <div class="payment-content">
+        <span class="close"><i class="bi bi-x-circle"></i></span>
+        <h2>Select Payment Method</h2>
+        <button class="payment-option">Credit Card</button>
+        <button class="payment-option">Debit Card</button>
+        <button class="payment-option">PayPal</button>
+        <button class="payment-option">Apple Pay</button>
+    </div>
+</div>
+<!--All products-->
+<div class="small-container">
+    <h2 class="title">All Products</h2>
+<!--sorting option-->    
+    <div class="sort-container">
+        <label for="sort">Sort by:</label>
+        <select id="sort" name="sort" onchange="sortProducts()">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+        </select>
+    </div>
+    <div class="row" id="product-list">
+        <div class="col-3" data-price="99.99">
+            <img src="p1.png" alt="product1" class="product-img">
+            <h4 class="product-title">Dannto Running Shoes for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£99.99</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="59.99">
+            <img src="p2.png" alt="product2" class="product-img">
+            <h4 class="product-title">Fushiton Trainers for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£59.99</p>
+            <button class="addtocart">Add to Cart</button> 
+        </div>
+        <div class="col-3" data-price="80.00">
+            <img src="p3.png" alt="product3" class="product-img">
+            <h4 class="product-title">Pjlmc Trainers for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+            </div>
+            <p class="price">£80.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="50.00">
+            <img src="p4.png" alt="product4" class="product-img">
+            <h4 class="product-title">ASICS Jolt 4 Sneakers for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£50.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="90.00">
+            <img src="p5.png" alt="product5" class="product-img">
+            <h4 class="product-title">Kricely Trail Trainers for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+            </div>
+            <p class="price">£90.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="89.99">
+            <img src="p6.png" alt="product6" class="product-img">
+            <h4 class="product-title">Feethit Trainers for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="price">£89.99</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="59.99">
+            <img src="p7.png" alt="product7" class="product-img">
+            <h4 class="product-title">Air Shoes for Men</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£59.99</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="79.99">
+            <img src="p8.png" alt="product8" class="product-img">
+            <h4 class="product-title">Men's Slip on Running Shoes</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£79.99</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="120.00">
+            <img src="p9.png" alt="product9" class="product-img">
+            <h4 class="product-title">Fushiton Mens Running Shoes</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="price">£120.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="100.00">
+            <img src="p10.png" alt="product10" class="product-img">
+            <h4 class="product-title">Hey Dude Men's 40714-0cm Sneaker</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£100.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="95.00">
+            <img src="p11.png" alt="product11" class="product-img">
+            <h4 class="product-title">Men's Mesh Casual Sneakers</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£95.00</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="130.99">
+            <img src="p12.png" alt="product12" class="product-img">
+            <h4 class="product-title">Air Cushion Running Shoes</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£130.99</p>
+            <button class="addtocart">Add to Cart</button>
+        </div>
+        <div class="col-3" data-price="89.99">
+            <img src="p13.png" alt="product13" class="product-img">
+            <h4 class="product-title">Nike Pegasus Trail 5</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+            </div>
+            <p class="price">£89.99</p>
+            <button class="addtocart">Add to Cart</button>  
+        </div>
+        <div class="col-3" data-price="120.00">
+            <img src="p14.png" alt="product14" class="product-img">
+            <h4 class="product-title">Adidas Men's Running Sneaker</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="price">£120.00</p>
+            <button class="addtocart">Add to Cart</button>  
+        </div>
+        <div class="col-3" data-price="105.00">
+            <img src="p15.png" alt="product15" class="product-img">
+            <h4 class="product-title">Under Armour Mens Running Shoes</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            <p class="price">£105.00</p>
+            <button class="addtocart">Add to Cart</button>  
+        </div>
+        <div class="col-3" data-price="110.00">
+            <img src="p16.png" alt="product16" class="product-img">
+            <h4 class="product-title">PUMA Men's Running Shoes</h4>
+            <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+            </div>
+            <p class="price">£110.00</p>
+            <button class="addtocart">Add to Cart</button>  
+         </div>
+     </div>  
+</div>
+<!--Footer-->  
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section about-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Contact Information</h3>
+                <p><i class="bi bi-geo-alt"></i> 2940 Sharon Lane, Manchester, WC71C9</p>
+                <p><i class="bi bi-envelope"></i> FootFlex@outlook.com</p>
+                <p><i class="bi bi-telephone-inbound"></i> +44 388293663</p>
+            </div>
+            <div class="footer-section logos-section">
+                <div class="brand-logos">
+                    <img src="adidas2.png" alt="addidaslogo">
+                    <img src="nike2.png" alt="nikelogo">
+                    <img src="puma2.png" alt="pumalogo">
+                    <img src="under.png" alt="underarmourlogo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>2024 Footflex. All Rights Reserved.</p>
+    </div>
+</footer>
+<!--js for toggle menu-->
+<script>
+var MenuItems = document.getElementById("MenuItems");
+MenuItems.style.maxHeight = "0px";
+function menutoggle(){
+    if(MenuItems.style.maxHeight === "0px")
+    { 
+        MenuItems.style.maxHeight = "200px";
+    }
+    else
+    {
+        MenuItems.style.maxHeight = "0px";
+    }
+}
+</script>
+<script src="pcart.js"></script>
+<!--js for sorting option-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var productList = document.getElementById("product-list");
+        var products = Array.from(productList.getElementsByClassName("col-3"));
+        var initialOrder = products.slice();
+    
+        document.getElementById("sort").addEventListener("change", function() {
+            var sortValue = this.value;
+    
+            if (sortValue === "default") {
+                productList.innerHTML = "";
+                initialOrder.forEach(function(product) {
+                    productList.appendChild(product);
+                });
+            } else {
+                products.sort(function(a, b) {
+                    var priceA = parseFloat(a.getAttribute("data-price"));
+                    var priceB = parseFloat(b.getAttribute("data-price"));
+                    if (sortValue === "price-asc") {
+                        return priceA - priceB;
+                    } else if (sortValue === "price-desc") {
+                        return priceB - priceA;
+                    }
+                });
+                productList.innerHTML = "";
+                products.forEach(function(product) {
+                    productList.appendChild(product);
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
+

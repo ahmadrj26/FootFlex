@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+body{
+    font-family: sans-serif;
+}
+.abt-sec-1, .abt-sec-2, .abt-sec-3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+.abt-sec-1 img, .abt-sec-2 img, .abt-sec-3 img {
+    width: 40%;
+    padding: 10px;
+}
+.text-content {
+    width: 60%;
+    padding: 85px;
+}
+.abt-sec-1 p, .abt-sec-2 p, .abt-sec-3 p{
+    color: black;
+}
+.abt-sec-2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row-reverse; 
+}
+.abt-sec-2 img {
+    width: 40%;
+    padding: 10px;
+}
+.abt-sec-2 .text-content {
+    width: 60%;
+    padding: 85px;
+    text-align: left; 
+}
+.header{
+    background-image: url(abtheader.png);
+}
+.abt-sec-1 p, .abt-sec-2 p, .abt-sec-3 p{
+    text-align: justify;
+}
+@media screen and (max-width: 800px) {
+    .abt-sec-1 img, .abt-sec-2 img, .abt-sec-3 img {
+        flex-basis: 100%; 
+    }
+    .abt-sec-1 .text-content, .abt-sec-2 .text-content, .abt-sec-3 .text-content {
+        width: 100%; 
+        padding: 20px;
+        flex-basis: 100%; 
+    }
+}
+@media screen and (max-width: 600px) {
+    .abt-sec-1 h2, .abt-sec-2 h2, .abt-sec-3 h2 {
+        font-size: 20px;
+        flex-basis: 100%; 
+    }
+    .abt-sec-1 p, .abt-sec-2 p, .abt-sec-3 p {
+        font-size: 14px;
+        flex-basis: 100%; 
+    }
+}
+    
+</style>   
+</head>
+<body>
+<!--Header-->       
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="finallogo.png" width="60" height="55" alt="company's-logo">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="" class="cart-icon"><i class="bi bi-cart-check-fill"></i></a>
+                <img src="menubar.png" class="menu-bar" onclick="menutoggle()" alt="menubar">
+            </div>
+        </div>
+    </div>
+<!--Product Cart-->    
+<div class="pcart">
+    <h2 class="pcart-title">Your Cart</h2>
+    <div class="pcart-content"></div>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">£0</div>
+    </div>
+    <button type="button" class="btn-buy">Buy Now</button>
+    <i class="bi bi-x-circle" id="close-pcart"></i>
+</div>
+<!--Payment Options-->
+<div id="payment" class="payment">
+    <div class="payment-content">
+        <span class="close"><i class="bi bi-x-circle"></i></span>
+        <h2>Select Payment Method</h2>
+        <button class="payment-option">Credit Card</button>
+        <button class="payment-option">Debit Card</button>
+        <button class="payment-option">PayPal</button>
+        <button class="payment-option">Apple Pay</button>
+    </div>
+</div>
+<!--About Us-->
+<div class="small-container">
+ <div class="abt-sec-1">
+    <img src="abt1.png" alt="About Us">
+    <div class="text-content">
+        <h2>About Us</h2>
+        <p>Welcome to FootFlex, your ultimate destination for top-quality footwear! At FootFlex, we're passionate about providing the perfect pair of shoes for every occasion. Whether you're hitting the gym or strolling around town, we've got you covered with our wide range of men's sports shoes, including renowned brands like Nike, Adidas, Under Armour, and Puma. With a commitment to style, comfort, and performance, FootFlex is where your journey to exceptional footwear begins.</p>
+    </div>
+</div>
+<!--Why Choose Us?-->
+<div class="abt-sec-2">
+    <img src="abt2.png" alt="About Us">
+    <div class="text-content">
+        <h2>Why Choose Us?</h2>
+        <p>At FootFlex, we stand out as more than just a shoe retailer; we're your trusted partner in footwear excellence. Our commitment to quality, variety, and customer satisfaction sets us apart. With a meticulously curated selection of top international and local brands like Nike, Adidas, Under Armour, Puma, and more, we offer unparalleled choice and diversity. Our knowledgeable team is dedicated to providing personalized assistance, ensuring you find the perfect pair of shoes to match your style and needs. Experience the FootFlex difference today, where every step is supported with care and expertise.</p>
+    </div>
+</div>
+<!--Our Vission-->
+<div class="abt-sec-3">
+    <img src="abt3.png" alt="About Us">
+    <div class="text-content">
+        <h2>Our Vission</h2>
+        <p>At FootFlex, our mission is to empower individuals through every step of their journey by providing premium footwear that enhances comfort, style, and performance. We envision a world where everyone can confidently stride towards their goals, supported by the perfect pair of shoes tailored to their needs. With a relentless commitment to innovation, quality, and customer satisfaction, we strive to be the premier destination for footwear enthusiasts worldwide. Join us as we step into the future, one foot at a time.</p>
+    </div>
+</div>
+</div>
+<!--Footer-->  
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section about-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Contact Information</h3>
+                <p><i class="bi bi-geo-alt"></i> 2940 Sharon Lane, Manchester, WC71C9</p>
+                <p><i class="bi bi-envelope"></i> FootFlex@outlook.com</p>
+                <p><i class="bi bi-telephone-inbound"></i> +44 388293663</p>
+            </div>
+            <div class="footer-section logos-section">
+                <div class="brand-logos">
+                    <img src="adidas2.png" alt="addidaslogo">
+                    <img src="nike2.png" alt="nikelogo">
+                    <img src="puma2.png" alt="pumalogo">
+                    <img src="under.png" alt="underarmourlogo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>2024 Footflex. All Rights Reserved.</p>
+    </div>
+</footer>
+<!--js for toggle menu-->
+<script>
+var MenuItems = document.getElementById("MenuItems");
+MenuItems.style.maxHeight = "0px";
+function menutoggle(){
+    if(MenuItems.style.maxHeight === "0px")
+    { 
+        MenuItems.style.maxHeight = "200px";
+    }
+    else
+    {
+        MenuItems.style.maxHeight = "0px";
+    }
+}
+</script>
+<script src="pcart.js"></script>
+</body>
+</html>

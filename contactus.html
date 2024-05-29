@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+body{
+    font-family: sans-serif;
+}
+.header{
+    background-image: url(abtheader.png);
+} 
+p{
+    color: black;
+} 
+.contact{
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(#fff,#f5f3f8);
+    background-size: cover;
+}
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #512d71;
+}
+.contact .content p{
+    font-weight: 300;
+    color: #512d71;
+    }
+.container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.container2 .contactinfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container2 .contactinfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    }
+.container2 .contactinfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #512d71;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #fff;
+}
+.container2 .contactinfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #512d71;
+    flex-direction: column;
+    font-weight: 300;
+}
+.container2 .contactinfo .box .text h3{
+    font-weight: 500;
+    color: #512d71;
+}
+.contactForm{
+    background: #ffffff;
+    width: 40%;
+    padding: 40px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.231);
+}
+.contactForm h2{
+    font-size: 30px;
+    color: #512d71;
+    font-weight: 500;
+}
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input, .contactForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border: 1px solid #0a0a0a;
+    outline: none;
+    resize: none;
+} 
+.contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #512d71;
+} 
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span{
+    color: #512d71;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactForm .inputBox input[type="submit"]{
+    display: inline-block;
+    background: #6c6187;
+    color: rgb(255, 255, 255);
+    padding: 8px 30px;
+    margin: 30px 0px;
+    border-radius: 30px;
+    transition: 0.5s;
+    border: #fff;
+}
+.contactForm .inputBox input[type="submit"]:hover {
+    background: #b2a1bd;
+}
+@media (max-width: 991px) {
+    .contact{
+        padding: 50px;
+    }
+    .container2{
+        flex-direction: column;
+    }
+    .container2 .contactinfo{
+            
+        margin-bottom: 40px;
+    }
+    .container2 .contactinfo, .contactForm{
+        width: 100%;
+    }
+}
+</style>     
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="finallogo.png" width="60" height="55" alt="company's-logo">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="" class="cart-icon"><i class="bi bi-cart-check-fill"></i></a>
+                <img src="menubar.png" class="menu-bar" onclick="menutoggle()" alt="menubar">
+            </div>
+        </div>
+    </div>
+<!--Product Cart-->    
+<div class="pcart">
+    <h2 class="pcart-title">Your Cart</h2>
+    <div class="pcart-content"></div>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">£0</div>
+    </div>
+    <button type="button" class="btn-buy">Buy Now</button>
+    <i class="bi bi-x-circle" id="close-pcart"></i>
+</div>
+<!--Payment Options-->
+<div id="payment" class="payment">
+    <div class="payment-content">
+        <span class="close"><i class="bi bi-x-circle"></i></span>
+        <h2>Select Payment Method</h2>
+        <button class="payment-option">Credit Card</button>
+        <button class="payment-option">Debit Card</button>
+        <button class="payment-option">PayPal</button>
+        <button class="payment-option">Apple Pay</button>
+    </div>
+</div>
+<!--Contact Us-->
+<section class="contact">
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>Should you have any inquiries, please don't hesitate to reach out to us via the provided phone 
+           number,visit our store in person, or submit your questions via email by completing the form below.</p>
+        </div>
+        <div class="container2">
+            <div class="contactinfo">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                    <div class="text">
+<!--Address-->                        
+                        <h3>Address</h3>
+                        <p>2940 Sharon Lane, <br>Manchester, WC71C9</p>
+                    </div>
+                 </div>
+                 <div class="box">
+                    <div class="icon"><i class="bi bi-telephone-inbound"></i></div>
+                    <div class="text">
+<!--Phone-->                                               
+                        <h3>Phone</h3>
+                        <p>+44 388293663</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="bi bi-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>FootFlex@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+<!--Contact Form-->
+<div class="contactForm">
+    <form onsubmit="showAlert()">
+        <h2>Send Message</h2>
+        <div class="inputBox">
+            <input type="text" name="fullname" required="required">
+            <span>Full Name</span>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required="required">
+            <span>Email</span>
+        </div>
+        <div class="inputBox">
+            <textarea name="message" required="required"></textarea>
+            <span>Type Your Message</span>
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</div>
+</div>
+</section>
+<!--Footer-->  
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section about-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Contact Information</h3>
+                <p><i class="bi bi-geo-alt"></i> 2940 Sharon Lane, Manchester, WC71C9</p>
+                <p><i class="bi bi-envelope"></i> FootFlex@outlook.com</p>
+                <p><i class="bi bi-telephone-inbound"></i> +44 388293663</p>
+            </div>
+            <div class="footer-section logos-section">
+                <div class="brand-logos">
+                    <img src="adidas2.png" alt="addidaslogo">
+                    <img src="nike2.png" alt="nikelogo">
+                    <img src="puma2.png" alt="pumalogo">
+                    <img src="under.png" alt="underarmourlogo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>2024 Footflex. All Rights Reserved.</p>
+    </div>
+</footer>
+<!--js for toggle menu-->
+<script>
+var MenuItems = document.getElementById("MenuItems");
+MenuItems.style.maxHeight = "0px";
+function menutoggle(){
+    if(MenuItems.style.maxHeight === "0px")
+    { 
+        MenuItems.style.maxHeight = "200px";
+    }
+    else
+    {
+        MenuItems.style.maxHeight = "0px";
+    }
+}
+function showAlert() {
+    alert('Your message has been successfully sent!🙂');
+    return false; 
+}
+</script>
+<script src="pcart.js"></script>
+</body>
+</html>
